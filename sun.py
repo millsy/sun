@@ -32,8 +32,14 @@ class MySun():
 		return self.home.previous_rising(ephem.Sun())
 	def nextset(self) :
 		return self.home.next_setting(ephem.Sun())
+	def lastset(self) :
+		return self.home.previous_setting(ephem.Sun())
+	def nextrise(self) :
+		return self.home.next_rising(ephem.Sun())
 
 if __name__ == "__main__":
 	sun = MySun(sys.argv[1:])
-	print(sun.lastrise())
-	print(sun.nextset())
+	print('Last Rise ' + str(sun.lastrise()))
+	print('Next Set  ' + str(sun.nextset()))
+	print('Next Rise ' + str(sun.nextrise()))
+	print('Last Set  ' + str(sun.lastset()))
